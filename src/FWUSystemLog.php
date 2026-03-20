@@ -3,7 +3,7 @@
 namespace franciscoblancojn\wordpress_utils;
 
 if (
-    !class_exists(__NAMESPACE__ . "\\FWUSystemLog")
+    !class_exists("FWUSystemLog")
     &&
     function_exists("get_option")
     &&
