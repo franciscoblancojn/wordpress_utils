@@ -1,0 +1,11 @@
+{
+    "name": "franciscoblancojn/wordpress_utils",
+    "description": "Libreria que ofrece multiples funcionalidades",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "franciscoblancojn\\wordpress_utils\\": "src/"
+        }
+    }
+}

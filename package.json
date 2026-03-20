@@ -1,0 +1,20 @@
+{
+  "name": "franciscoblancojn-wordpress_utils",
+  "description": "Libreria que ofrece multiples funcionalidades",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "update": "rm -rf vendor && rm composer.lock && composer install",
+    "push-tag": "git addc v$(npm pkg get version | tr -d '\"') && git tag v$(npm pkg get version | tr -d '\"') && git push origin v$(npm pkg get version | tr -d '\"')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoblancojn/wordpress_utils.git"
+  },
+  "author": "franciscoblancojn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoblancojn/wordpress_utils/issues"
+  },
+  "homepage": "https://github.com/franciscoblancojn/wordpress_utils#readme"
+}
