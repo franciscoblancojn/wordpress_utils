@@ -1,7 +1,7 @@
 {
   "name": "franciscoblancojn-wordpress_utils",
   "description": "Libreria que ofrece multiples funcionalidades",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "update": "rm -rf vendor && rm composer.lock && composer install",
