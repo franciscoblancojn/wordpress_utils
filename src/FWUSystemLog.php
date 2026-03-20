@@ -1,7 +1,5 @@
 <?php
 
-namespace franciscoblancojn\wordpress_utils;
-
 if (
     !class_exists("FWUSystemLog")
     &&
@@ -79,11 +77,11 @@ if (
                             Solo se guardan las <?= $limit ?> peticiones por tipo
                         </h1>
                         <form method="post" style="margin-left: auto;">
-                            <button class="button page-title-action">Recargar</button>
+                            <button class="button button-primary">Recargar</button>
                         </form>
                         <form method="post">
                             <input type="hidden" name="clear-log" value="1">
-                            <button class="button page-title-action">Borrar Log</button>
+                            <button class="button button-primary">Borrar Log</button>
                         </form>
 
                     </div>
