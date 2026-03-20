@@ -113,10 +113,10 @@ define("MY_PLUGIN_SLUG_LOG_KEY",   "custom_key");  // clave en la DB
 use franciscoblancojn\wordpress_utils\FWUSystemLog;
 
 // Inicializar
-FWUSystemLog::init("MY_PLUGIN");
+FWUSystemLog::init("MY_PLUGIN_SLUG");
 
 // Agregar log
-FWUSystemLog::add("MY_PLUGIN", [
+FWUSystemLog::add("MY_PLUGIN_SLUG", [
     "type"    => "DEBUG",
     "message" => "Plugin cargado",
     "data"    => ["user" => get_current_user_id()]
