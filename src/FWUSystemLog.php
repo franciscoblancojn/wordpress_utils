@@ -1,5 +1,7 @@
 <?php
 
+namespace Franciscoblancojn\WordpressUtils;
+
 if (
     !class_exists("FWUSystemLog")
     &&
