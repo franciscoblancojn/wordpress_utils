@@ -5,8 +5,10 @@ namespace franciscoblancojn\wordpress_utils;
 if (!class_exists("FWUTooltip") && function_exists("add_action")) {
     class FWUTooltip extends FWUComponent
     {
-        public static function html($title, $text): string
+        public static function html(...$args): string
         {
+            $title = $args[0] ?? '';
+            $text = $args[1] ?? '';
             ob_start();
 ?>
             <span class="fwue-tooltip">

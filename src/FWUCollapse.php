@@ -5,8 +5,11 @@ namespace franciscoblancojn\wordpress_utils;
 if (!class_exists("FWUCollapse") && function_exists("add_action")) {
     class FWUCollapse extends FWUComponent
     {
-        public static function html($title, $content, $open = false): string
+        public static function html(...$args): string
         {
+            $title = $args[0] ?? '';
+            $content = $args[1] ?? '';
+            $open = $args[2] ?? false;
             ob_start();
 ?>
             <details class="fwue-collapse" <?= $open ? 'open' : '' ?>>

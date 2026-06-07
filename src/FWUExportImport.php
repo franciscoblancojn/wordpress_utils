@@ -9,8 +9,13 @@ if (
 ) {
     class FWUExportImport extends FWUComponent
     {
-        public static function html($modalId, $title, $action, $payload = [], $reload = true): string
+        public static function html(...$args): string
         {
+            $modalId = $args[0] ?? '';
+            $title = $args[1] ?? '';
+            $action = $args[2] ?? '';
+            $payload = $args[3] ?? [];
+            $reload = $args[4] ?? true;
             $payloadJson = htmlspecialchars(json_encode($payload), ENT_QUOTES, 'UTF-8');
             $reloadJs = $reload ? 'true' : 'false';
 

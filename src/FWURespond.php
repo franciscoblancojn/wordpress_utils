@@ -11,8 +11,9 @@ if (
 ) {
     class FWURespond extends FWUComponent
     {
-        public static function html($respond): string
+        public static function html(...$args): string
         {
+            $respond = $args[0] ?? [];
             if (empty($respond) || !isset($respond['status'])) {
                 return '';
             }

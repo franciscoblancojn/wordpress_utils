@@ -5,8 +5,11 @@ namespace franciscoblancojn\wordpress_utils;
 if (!class_exists("FWUModal") && function_exists("add_action")) {
     class FWUModal extends FWUComponent
     {
-        public static function html($modalId, $title, $content): string
+        public static function html(...$args): string
         {
+            $modalId = $args[0] ?? '';
+            $title = $args[1] ?? '';
+            $content = $args[2] ?? '';
             ob_start();
 ?>
             <div id="<?= $modalId ?>" class="fwue-modal">

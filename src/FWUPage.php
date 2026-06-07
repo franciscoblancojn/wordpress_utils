@@ -17,8 +17,29 @@ if (!class_exists("FWUPage") && function_exists("add_action")) {
             echo static::html(...$args);
         }
 
-        public static function html($pageKey, $title, $tags, $sectionsDir, $data = []): string
+        public static function tabs($tags, $defaultTag): void
         {
+?>
+            <div class="nav-tab-wrapper woo-nav-tab-wrapper">
+                <?php foreach ($tags as $tag): ?>
+                    <a
+                        class="nav-tab <?= $tag['key'] === $defaultTag ? 'nav-tab-active' : '' ?>"
+                        data-tab="<?= $tag['key'] ?>"
+                        href="#tag-<?= $tag['key'] ?>">
+                        <?= $tag['title'] ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+<?php
+        }
+
+        public static function html(...$args): string
+        {
+            $pageKey = $args[0] ?? '';
+            $title = $args[1] ?? '';
+            $tags = $args[2] ?? [];
+            $sectionsDir = $args[3] ?? '';
+            $data = $args[4] ?? [];
             $defaultTag = $tags[0]['key'] ?? '';
             if (!empty($data)) extract($data);
 
@@ -94,8 +115,9 @@ if (!class_exists("FWUPage") && function_exists("add_action")) {
             return ob_get_clean();
         }
 
-        public static function js($pageKey = ''): string
+        public static function js(...$args): string
         {
+            $pageKey = $args[0] ?? '';
             ob_start();
 ?>
             <script>
